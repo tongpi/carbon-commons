@@ -42,24 +42,24 @@
                 long expireTime = System.currentTimeMillis() + Integer.parseInt(renewDuration) * 60 * 60 * 1000;
                 brokerClient.renewSubscription(subscriptionId, expireTime);
 %>
-    <script type="text/javascript">CARBON.showInfoDialog('Renewed subscription <%=subscriptionId %> till <%=new Date(expireTime).toString()%>');</script>
+    <script type="text/javascript">CARBON.showInfoDialog('续订 <%=subscriptionId %> 到 <%=new Date(expireTime).toString()%>');</script>
     <%
     } else {
     %>
-    <script type="text/javascript">CARBON.showErrorDialog('Error in entered renew duration: <%=renewDuration%> ; Please enter a positive integer value for renew duration ');</script>
+    <script type="text/javascript">CARBON.showErrorDialog('续订时长不正确: <%=renewDuration%> ; 请指定一个正整数 ');</script>
     <%
         }
 
     } catch (NumberFormatException e) {
     %>
-    <script type="text/javascript">CARBON.showErrorDialog('Error in entered renew duration: <%=renewDuration%> ; Please enter an integer value for renew duration ');</script>
+    <script type="text/javascript">CARBON.showErrorDialog('续订时长不正确: <%=renewDuration%> ; 请指定一个正整数 ');</script>
     <%
         }
 
     } else if (subscriptionId != null) {
         brokerClient.unsubscribe(subscriptionId);
     %>
-    <script type="text/javascript">CARBON.showInfoDialog('Unsubscribed from <%=subscriptionId %> successfully', function() {
+    <script type="text/javascript">CARBON.showInfoDialog('取消订阅 <%=subscriptionId %> 成功', function() {
         location.href = 'index.jsp';
     });
     </script>
@@ -96,9 +96,9 @@
             <table class="styledLeft" <%if (details == null ) {%>style="display:none"<%}%> id="subscriptionsTable">
                 <thead>
                 <tr>
-                    <th>Event Sink</th>
-                    <th>Topic</th>
-                    <th>Expiration Time</th>
+                    <th>事件目的地</th>
+                    <th>主题</th>
+                    <th>到期时间</th>
                     <th width="30%"></th>
                 </tr>
                 </thead>
@@ -126,10 +126,10 @@
                             <input type="HIDDEN" name="renewDuration" value="12">
                             <a style="background-image: url(../admin/images/delete.gif);"
                                class="icon-link"
-                               onclick="doUnsubscribe('<%=subId%>')">Unsubscribe</a>
+                               onclick="doUnsubscribe('<%=subId%>')">取消订阅</a>
                             <%--<a style="background-image: url(images/refresh.gif);" class="icon-link"
-                               onClick="show_prompt(document.getElementById('<%=subId%>'))">Renew</a>--%>
-                            <a style="background-image: url(images/refresh.gif);" class="icon-link" href="renewSubscriptions.jsp?isRenew=true&subId=<%=detail.getSubscriptionId()%>">Renew</a>
+                               onClick="show_prompt(document.getElementById('<%=subId%>'))">续订</a>--%>
+                            <a style="background-image: url(images/refresh.gif);" class="icon-link" href="renewSubscriptions.jsp?isRenew=true&subId=<%=detail.getSubscriptionId()%>">续订</a>
                         </form>
                     </td>
                 </tr>
@@ -141,7 +141,7 @@
             </table>
             <div id="noSubscriptionsDiv" class="noDataDiv"
                  <%if (details != null) {%>style="display:none"<%}%>>
-                No Subscriptions Defined
+                未定义订阅
             </div>
         </div>
     </div>

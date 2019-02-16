@@ -28,7 +28,7 @@
         CarbonUIMessage.sendCarbonUIMessage(status, CarbonUIMessage.WARNING, request);
     }
     if (status == null) {
-        status = "Successfully published the message :" + textMsg + "to the topic :" + topic;
+        status = "成功发布消息 :" + textMsg + " 到主题 :" + topic;
         CarbonUIMessage.sendCarbonUIMessage(status, CarbonUIMessage.INFO, request);
     }
 %>

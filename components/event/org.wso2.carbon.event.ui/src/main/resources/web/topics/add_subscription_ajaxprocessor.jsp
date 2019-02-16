@@ -67,18 +67,18 @@
                 eventSink = eventSink.trim();
 
                 brokerClient.subscribe(topic, eventSink, time, null);
-                message = "Subscribed to " + eventSink + " using " + topic + " Successfully";
+                message = "订阅到 " + eventSink + " 使用主题 " + topic + " 成功";
             } catch (BrokerClientException e) {
                 message = e.getErrorMessage();
             } catch (ParseException e) {
-                message = "Error: Expiration date/time(" + expirationDateTime + ") is invalid.";
+                message = "错误: 到期日期或时间(" + expirationDateTime + ") 无效.";
             }
 
 %>
 <%=message%>
 <%
 } else {
-    message = "Error: Topic and Event Sink Must not be null";
+    message = "错误: 主题和事件目的地不能为空";
 
 %>
 <%=message%>

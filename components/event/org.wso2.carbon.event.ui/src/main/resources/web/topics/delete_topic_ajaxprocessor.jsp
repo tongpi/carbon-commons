@@ -35,10 +35,10 @@
             message = "Error, Subscriptions exists for this topic, Please remove all subscriptions before deleting the topic";
         } else {
             stub.removeTopic(topic);
-            message = " Topic removed successfully";
+            message = " 主题删除成功！";
         }
     } catch (RemoteException e) {
-        message = "Error in deleting topic  " + e;
+        message = "处处主题出错了。  " + e;
 %> <%=message%>
 <%
     }

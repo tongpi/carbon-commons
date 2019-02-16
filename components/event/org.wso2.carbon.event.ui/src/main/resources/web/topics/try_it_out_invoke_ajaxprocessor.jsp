@@ -16,11 +16,11 @@
     try {
         brokerClient.publish(topic, textMsg);
     } catch (Exception e) {
-        messageToBePrinted = "Error: while publishing the message " + e.getMessage();
+        messageToBePrinted = "错误: 发布消息出错了。 " + e.getMessage();
     }
 
     if (messageToBePrinted == null) {
-        messageToBePrinted = "Successfully published the message to the topic :" + topic;
+        messageToBePrinted = "消息成功发不到主题 :" + topic;
     }
 %>
 <%=messageToBePrinted%>

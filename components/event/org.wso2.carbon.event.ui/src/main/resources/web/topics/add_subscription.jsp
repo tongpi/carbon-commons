@@ -86,7 +86,7 @@
                    style="width:100%; margin-bottom:10px; margin-top:10px; ">
                 <thead>
                 <tr>
-                    <th>Enter Subscription Details</th>
+                    <th>指定订阅参数</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -95,7 +95,7 @@
                         <table class="normal-nopadding" style="width:100%">
                             <tbody>
                             <tr>
-                                <td class="leftCol-med">Topic<span class="required">*</span></td>
+                                <td class="leftCol-med">主题<span class="required">*</span></td>
                                 <td colspan="3"><input id="topicId" type="text" name="topic"
                                                        value="<%=Encode.forHtmlAttribute(topic)%>" readonly="true"/></td>
                             </tr>
@@ -127,7 +127,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="leftCol-med">Event Sink URL<span
+                                <td class="leftCol-med">事件目的地 URL<span
                                         class="required">*</span></td>
                                 <td colspan="3"><input type="text" id="subURL" style="width:500px"
                                                        name="eventSinkURL"
@@ -135,9 +135,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Expiration Time</td>
+                                <td>到期时间</td>
                                 <td style="width:170px;vertical-align:top !important">
-                                    <div style="height:30px;">Date:</div>
+                                    <div style="height:30px;">日期:</div>
                                     <input type="text" id="expirationTime" name="expirationTime"
                                            onclick="clearTextIn(this)" onblur="fillTextIn(this)"
                                            value=""
@@ -152,7 +152,7 @@
                                 </td>
                                 <td style="width:170px;vertical-align:top !important">
                                     <div style="height:30px;"
-                                            >Time:
+                                            >时间:
                                     </div>
                                     <input type="text" id="hhid" alt="hh"
                                            style="width:40px;float:left;margin-right:7px;"
@@ -163,7 +163,7 @@
                                            value=""/>
                                     <input type="text" id="ssid" alt="ss"
                                            style="width:40px;float:left;margin-right:7px" value=""/>
-                                    eg:(15/30/00)
+                                    如:(15/30/00)
                                 </td>
                                 <td>
 
@@ -176,9 +176,9 @@
                 </tr>
                 <tr>
                     <td class="buttonRow">
-                        <input type="submit" value="Subscribe" class="button"
+                        <input type="submit" value="订阅" class="button"
                                onClick="performSubscribe()"/>
-                        <input type="button" value="Cancel" class="button"
+                        <input type="button" value="取消" class="button"
                                onClick="location.href='topics.jsp';"/>
                     </td>
                 </tr>

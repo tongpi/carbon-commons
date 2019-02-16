@@ -220,7 +220,7 @@
             <table id="topicAddTable" class="styledLeft" style="width:100%">
                 <thead>
                 <tr>
-                    <th colspan="2">Enter Subtopic Name</th>
+                    <th colspan="2"><fmt:message key="enter.subtopic.name"/></th>
                 </tr>
                 </thead>
                 <tbody>

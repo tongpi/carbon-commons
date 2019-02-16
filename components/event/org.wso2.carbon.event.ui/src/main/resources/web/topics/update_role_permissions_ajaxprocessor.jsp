@@ -50,7 +50,7 @@
         // message content is decided when showing the pop-up as this is used when adding a new topic and also when updating permission roles for a topic.
         message = "";
     } catch (Exception e) {
-        message = "Error in adding/updating permissions : " + e.getMessage();
+        message = "配置权限出错了: " + e.getMessage();
     }
     session.setAttribute("topicRolePermission", stub.getTopicRolePermissions(topic));
 %><%=message%>

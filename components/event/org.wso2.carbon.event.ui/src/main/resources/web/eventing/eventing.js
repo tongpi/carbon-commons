@@ -179,7 +179,7 @@ function onTopicDataSubmit() {
 			"isSecureTopic":isSecureTopic.value, "description":description.value, "schemadescription":schemadescription.value},
 			function(data) {
         		jQuery('#topicData').html(data);
-                CARBON.showInfoDialog("Topic data updated  successfully!!");
+                CARBON.showInfoDialog("主题数据更新成功!!");
     		});
 }
 
@@ -241,7 +241,7 @@ function addRolePermission(){
     }
 
     if(actionToAuthorize[actionToAuthorize.selectedIndex].value == "select"){
-        CARBON.showErrorDialog("Please select an Action for Permission");
+        CARBON.showErrorDialog("请选择权限操作");
         return;
     }
     // Setting the role permission string

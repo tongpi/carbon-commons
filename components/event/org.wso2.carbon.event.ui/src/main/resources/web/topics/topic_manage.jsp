@@ -226,12 +226,12 @@
             <table class="normal" style="width:100%">
                 <thead>
                 <tr>
-                    <th>Topic</th>
-                    <th>Event Sink URL</th>
-                    <th>Mode</th>
-                    <th>Created Time</th>
-                    <th>Expiration Time</th>
-                    <th>Action</th>
+                    <th>主题</th>
+                    <th>事件目的地 URL</th>
+                    <th>方式</th>
+                    <th>创建时间</th>
+                    <th>到期时间</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -292,7 +292,7 @@
 
 <div id="noWSSubscriptionsDiv" class="noDataDiv"
      <%if (topicWsSubscriptions != null) {%>style="display:none"<%}%>>
-    No WS Subscriptions Defined
+    未定义 WS 订阅
 </div>
 
 <div style="clear:both">&nbsp;</div>
@@ -306,9 +306,9 @@
             <table class="normal" style="width:100%">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Created Time</th>
-                    <th>Owner</th>
+                    <th>名称</th>
+                    <th>创建时间</th>
+                    <th>所有者</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -336,7 +336,7 @@
 </table>
 <div id="noJMSSubscriptionsDiv" class="noDataDiv"
      <%if (topicJMSSubscriptions != null) {%>style="display:none"<%}%>>
-    No JMS Subscriptions Defined
+    未定义JMS 订阅
 </div>
 <div style="clear:both">&nbsp;</div>
 

@@ -31,7 +31,7 @@
         stub.updatePermission(topic, topicRolePermissionArrayList.toArray(topicRolePermissions));
         message = "Topic added successfully";
     } catch (Exception e) {
-        message = "Error in adding/updating permissions : " + e.getMessage();
+        message = "配置权限出错了: " + e.getMessage();
     }
 
     session.removeAttribute("topicRolePermissions");

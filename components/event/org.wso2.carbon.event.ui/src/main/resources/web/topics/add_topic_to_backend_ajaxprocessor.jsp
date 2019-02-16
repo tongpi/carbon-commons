@@ -28,7 +28,7 @@
         session.removeAttribute("topic");
         session.setAttribute("topic", topic);
     } catch (Exception e) {
-        message = "Error: " + e.getMessage();
+        message = "错误: " + e.getMessage();
 
 %>
 <%=message%>
@@ -38,6 +38,6 @@
 
     session.removeAttribute("topicWsSubscriptions");
     session.removeAttribute("topicJMSSubscriptions");
-    message = "Topic Added successfully";
+    message = "主题添加成功！";
 %><%=message%>
 

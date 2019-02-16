@@ -53,11 +53,11 @@
             request="<%=request%>"/>
     <div id="middle">
         <div id="workArea">
-            <h2>Topic Browser</h2>
+            <h2>主题浏览器</h2>
 
             <table style="width:100%;margin-bottom:20px;" class="yui-skin-sam">
                 <tr>
-                    <td class="tree-top"><h3>Topics</h3></td>
+                    <td class="tree-top"><h3>主题</h3></td>
                 </tr>
                 <tr>
                     <td valign="top" style="width:200px;" class="leftBox">
@@ -109,15 +109,14 @@
                                     </a>
 
                                     <a class="addSubtopicStyle"
-                                       onclick="showAddTopicWindow('<%=node.getTopicName()%>')">Add
-                                                                                                Subtopic</a>
+                                       onclick="showAddTopicWindow('<%=node.getTopicName()%>')">添加子主题</a>
                                     <a class="topicSubscribeStyle"
-                                       onclick="javascript:location.href='add_subscription.jsp?topic=<%=node.getTopicName()%>'">Subscribe</a>
+                                       onclick="javascript:location.href='add_subscription.jsp?topic=<%=node.getTopicName()%>'">订阅</a>
                                     <a class="topicDetailsStyle"
-                                       onclick="showManageTopicWindow('<%=node.getTopicName()%>')">Details</a>
+                                       onclick="showManageTopicWindow('<%=node.getTopicName()%>')">详细</a>
                                     <%if(!node.getTopicName().equals("/")){%>
                                     <a class="topicDeleteStyle"
-                                       onclick="deleteTopic('<%=node.getTopicName()%>')">Delete</a> <%
+                                       onclick="deleteTopic('<%=node.getTopicName()%>')">删除</a> <%
                                     }
                                     %>
                                     </p>

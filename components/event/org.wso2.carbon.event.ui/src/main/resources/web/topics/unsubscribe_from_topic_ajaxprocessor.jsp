@@ -32,7 +32,7 @@
         brokerClient.unsubscribe(subscriptionId);
         message = "Unsubscribed from : " + subscriptionId + " successfully";
     } catch (RemoteException e) {
-        message = "Error in unsubscribing : " + e.getMessage();
+        message = "取消订阅出错了: " + e.getMessage();
     }
     session.setAttribute("topicWsSubscriptions", stub.getWsSubscriptionsForTopic(topic));
 %><%=message%>

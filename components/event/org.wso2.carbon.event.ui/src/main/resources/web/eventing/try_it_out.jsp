@@ -16,7 +16,7 @@
 %>
 
 <carbon:breadcrumb
-		label="Try It Out"
+		label="试一试"
 		resourceBundle="org.wso2.carbon.event.ui.i18n.Resources"
 		topPage="false"
 		request="<%=request%>" />
@@ -26,12 +26,12 @@
             function validateStep1() {
                 var topic = document.getElementById('topic').value;
                 if (topic == '') {
-                    CARBON.showWarningDialog("Topic is empty");
+                    CARBON.showWarningDialog("主题为空");
                     return false;
                 }
                 var message = document.getElementById('xmlMessage').value;
                 if (message == '') {
-                    CARBON.showWarningDialog("XML Message is empty");
+                    CARBON.showWarningDialog("XML消息为空");
                     return false;
                 }
                /* $.post('try_it_out_invoke.jsp', {topic : topic,xmlMessage:message}, function (data) {

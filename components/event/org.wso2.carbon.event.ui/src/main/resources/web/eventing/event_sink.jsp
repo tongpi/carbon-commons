@@ -88,7 +88,7 @@
 
 <div id="middle">
   <div id="workArea">
-	<h3>Create a New Subscription</h3>
+	<h3>添加新订阅</h3>
 	
 <%
 
@@ -127,14 +127,14 @@
             try {
                 brokerClient.subscribe(topic, eventSink, time, null);
 
-                message = "Subscribed to " + topic + " for " + eventSink + " Successfully";
+                message = "订阅主题 " + topic + " 为 " + eventSink + " 成功";
                 %>
       <script type="text/javascript">CARBON.showInfoDialog('<%=message%>', function() {
           location.href = "../eventing/index.jsp"
       });</script>
       <%
             } catch (Exception e) {
-                message = "Error while subscribing to " + topic + " for " + eventSink;
+                message = "订阅到主题 " + topic + " 为 " + eventSink + " 出错了";
                 %>
       <script type="text/javascript">CARBON.showErrorDialog('<%=message%>', function() {
           location.href = "../eventing/index.jsp"
@@ -142,7 +142,7 @@
       <%
             }
         } else {
-            throw new Exception("Topic and Event Sink Must not be null");
+            throw new Exception("主题和事件目的地不能为空");
         }
 
           }
@@ -152,7 +152,7 @@
     <table style="width:100%" id="userAdd" class="styledLeft">
                 <thead>
                     <tr>
-                        <th>Enter Subscription Details</th>
+                        <th>指定订阅参数</th>
                     </tr>
                 </thead>
                 <tbody><tr>
@@ -160,23 +160,23 @@
                         <table class="normal-nopadding" style="width:100%">
                             <tbody>
                             <tr>
-                                <td class="leftCol-med">Topic<span class="required">*</span></td>
+                                <td class="leftCol-med">主题<span class="required">*</span></td>
                                 <td colspan="3"><input type="text" name="topic" class="initE" title="Topic you need to subscribe to eg. foo/bar"/></td>
                             </tr>
                             <tr >
-                                <td class="leftCol-med">Event Sink URL<span class="required">*</span></td>
+                                <td class="leftCol-med">事件目的地 URL<span class="required">*</span></td>
                                 <td colspan="3"><input type="text" style="width:500px" name="eventSinkURL" class="initE" title="Enpoint reference to where matching messages are sent eg. http://yourhost:7777/services/MessageCollector"/></td>
                             </tr>
                             <tr>
-                                <td>Expiration Time</td>
+                                <td>到期时间</td>
                                 <td style="width:170px;">
-                                    Date:<br />
+                                    日期:<br />
                                     <input type="text" id="expirationTime" name="expirationTime" class="initE" onclick="clearTextIn(this)" onblur="fillTextIn(this)" value="" title="Active Time Period for this Subscription, if -1 never expires"/>
                                  	<a style="cursor:pointer" onclick="showCalendar()"><img src="../admin/images/calendar.gif" border="0" align="top" /> </a>
                                     <div class="yui-skin-sam"><div id="cal1Container" style="display:none;"></div></div>
                                 </td>
                                 <td style="width:150px">
-                                     Time:<br/>
+                                     时间:<br/>
                                      <input type="text" id="hhid" name="hours"  onFocus="handleFocus(this,'HH')" onBlur="handleBlur(this,'HH');" class="defaultText" style="width:30px;"  />
                                      <input type="text" id="mmid" name="minites"  onFocus="handleFocus(this,'mm')" onBlur="handleBlur(this,'mm');" class="defaultText" style="width:30px;"  />
                                      <input type="text" id="ssid" name="seconds" onFocus="handleFocus(this,'ss')" onBlur="handleBlur(this,'ss');" class="defaultText" style="width:30px;" />
