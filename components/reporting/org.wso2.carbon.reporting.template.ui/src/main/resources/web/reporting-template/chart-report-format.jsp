@@ -15,7 +15,7 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 -->
-
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
@@ -37,7 +37,7 @@
         document.chartReportFormat.action = '../../fileupload/upload';
         var reportTitle = document.getElementById("reportTitle").value;
         if (reportTitle == '') {
-                CARBON.showErrorDialog('Please enter a title for the report.');
+                CARBON.showErrorDialog('请输入报表标题.');
 
             return false;
         }
@@ -76,12 +76,12 @@
             if (input_obj[i].name.indexOf('size') != -1) {
                 if(input_obj[i].value != ''){
                     if (parseInt(input_obj[i].value) != input_obj[i].value) {
-                    msg = 'Please enter integer values for font size.';
+                    msg = '请输入字体大小的整数值.';
                     return msg;
                 }
                 }
                 else{
-                    msg = 'Font size fields is empty. Please enter a integer value';
+                    msg = '字体大小字段为空。请输入整数值';
                     return msg;
                 }
 
@@ -146,23 +146,23 @@
     String heading = "";
     if(repType != null){
         if(repType.equalsIgnoreCase("bar_chart_type_report"))
-            heading = "Bar Chart Report";
+            heading = "条形图报表";
         else if(repType.equalsIgnoreCase("line_chart_type_report"))
-            heading = "Line Chart Report";
+            heading = "线图报表";
         else if (repType.equalsIgnoreCase("area_chart_type_report"))
-            heading = "Area Chart Report";
+            heading = "面积图报表";
         else if(repType.equalsIgnoreCase("stacked_bar_chart_type_report"))
-            heading = "Stacked Bar Chart Report";
+            heading = "堆叠条形图报表";
         else if(repType.equalsIgnoreCase("stacked_area_chart_type_report"))
-            heading = "Stacked Area Chart Report";
+            heading = "堆叠面积图报表";
          else if(repType.equalsIgnoreCase("xy_bar_chart_type_report"))
-            heading = "XY Bar Chart Report";
+            heading = "XY 条形图报表";
          else if(repType.equalsIgnoreCase("xy_line_chart_type_report"))
-            heading = "XY Line Chart Report";
+            heading = "XY 线图报表";
         else if(repType.equalsIgnoreCase("xy_area_chart_type_report"))
-            heading = "XY Area Chart Report";
+            heading = "XY 面积图报表";
         else if(repType.equalsIgnoreCase("pie_chart_type_report"))
-            heading = "Pie Chart Report";
+            heading = "饼图报表";
     }
     try {
         client = new ReportTemplateClient(configContext, serverURL, cookie);
@@ -182,7 +182,7 @@
     if(success != null && success.equalsIgnoreCase("false")){
      %>
       <script type="text/javascript">
-            CARBON.showErrorDialog('Only image files can be selected to logo.', function() {
+            CARBON.showErrorDialog('只能选择图像文件作为徽标.', function() {
             location.href = "../reporting-template/chart-report-format.jsp";
         }, function () {
             location.href = "../reporting-template/chart-report-format.jsp";
@@ -205,7 +205,7 @@
                 "                    </u></th> \n" +
                 "                </tr>\n" +
                 "            <tr>\n" +
-                "                <td width=\"180px\">Font Name <span\n" +
+                "                <td width=\"180px\">字体名称 <span\n" +
                 "                        class=\"required\">*</span></td>\n" +
                 "                <td><select name=\"font" + elementName + "style\"\n" +
                 "                           id=\"font" + elementName + "style\">\n" +
@@ -213,19 +213,19 @@
 
                 "                </td>\n" +
                 "            \n" +
-                "             <td width=\"180px\">Font Size" + "<span\n" +
+                "             <td width=\"180px\">字体大小" + "<span\n" +
                 "                        class=\"required\">*</span></td>\n" +
                 "                <td><input name=\"font" + elementName + "size\"\n" +
                 "                           id=" + "\"font" + elementName + "size\"" + "value=\"12\"/>\n" +
                 "                </td>\n" +
                 "            \n" +
                 "</tr> \n <tr>" +
-                "             <td width=\"180px\">Font Color" + "<span\n" +
+                "             <td width=\"180px\">字体颜色" + "<span\n" +
                 "                        class=\"required\">*</span></td>\n" +
                 "                <td><input class=\"color\" value=\"000000\" name=\"font" + elementName + "color\"\n" +
                 "                           id=" + "\"font" + elementName + "color\"" + "/>\n" +
                 "                </td>\n" +
-                "             <td width=\"180px\">Background Color" + "<span\n" +
+                "             <td width=\"180px\">背景色" + "<span\n" +
                 "                        class=\"required\">*</span></td>\n" +
                 "                <td><input class=\"color\" value=\"FAFAFA\" name=\"" + elementName + "BgColor\"\n" +
                 "                           id=" + "\"font" + elementName + "size\"" + "/>\n" +
@@ -234,29 +234,29 @@
                 "            \n" +
                 "\n</tr>\n" +
                 "<tr>\n" +
-                "                <td width=\"180px\">Bold</td>\n" +
+                "                <td width=\"180px\">加粗</td>\n" +
                 "                <td><input type=\"checkbox\" name=\"" + elementName + "Bold\"\n" +
                 "                           id=\"" + elementName + "Bold\" value=\"" + elementName + "Bold\"/>\n" +
                 "                </td>\n" +
                 "            \n" +
-                "             <td width=\"180px\">Italic" + "</td>\n" +
+                "             <td width=\"180px\">斜体" + "</td>\n" +
                 "                <td><input type=\"checkbox\" name=\"" + elementName + "Italic\"\n" +
                 "                           id=\"" + elementName + "Italic\" value=\"" + elementName + "Italic\"/>\n" +
                 "                </td>\n" +
                 "</tr> \n <tr>" +
                 "            \n" +
-                "             <td width=\"180px\">Strike-through" + "</td>\n" +
+                "             <td width=\"180px\">删除线" + "</td>\n" +
                 "                <td><input type=\"checkbox\" name=\"" + elementName + "Strike\"\n" +
                 "                           id=\"" + elementName + "Strike\" value=\"" + elementName + "Strike\"/>\n" +
                 "                </td>\n" +
-                "             <td width=\"180px\">Underline" + "</td>\n" +
+                "             <td width=\"180px\">下划线" + "</td>\n" +
                 "                <td><input type=\"checkbox\" name=\"" + elementName + "underline\"\n" +
                 "                           id=\"" + elementName + "underline\" value=\"" + elementName + "underline\"/>\n" +
                 "                </td>\n" +
                 "</tr>\n" + "" +
                 " <tr>" +
                 "            \n" +
-                "             <td width=\"180px\">Text Alignment" + "</td>\n" +
+                "             <td width=\"180px\">文本对齐" + "</td>\n" +
                 "                <td><select name=\"" + elementName + "Alignment\"\n" +
                 "                           id=\"" + elementName + "Alignment\">\n" +
                 getOptionString(aligns, 0) + "</select>\n" +
@@ -294,7 +294,7 @@
 
 
 <div id="middle">
-    <h2>Add <%=heading%> - Step 2</h2>
+    <h2>添加 <%=heading%> - 步骤 2</h2>
 
     <div id="workArea">
 

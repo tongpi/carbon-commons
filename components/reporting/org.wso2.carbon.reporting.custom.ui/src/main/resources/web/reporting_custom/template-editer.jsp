@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.reporting.custom.ui.client.ReportResourceSupplierClient" %>
 <%@ page import="org.wso2.carbon.reporting.custom.ui.client.JrxmlFileUploaderClient" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIMessage" %>
@@ -27,8 +28,8 @@
     <%
         String reportName = request.getParameter("reportName");
         String reportCode = null;
-        String error = "Failed to upload template";
-        String error2= "Failed get report template";
+        String error = "上传模板失败";
+        String error2= "获取报表模板失败";
         ReportResourceSupplierClient resourcesSupplier = ReportResourceSupplierClient.getInstance(config, session);
         JrxmlFileUploaderClient uploaderClient = JrxmlFileUploaderClient.getInstance(config, session);
 
@@ -61,9 +62,9 @@
             <textarea id="payload" cols="150" rows="25">
                 <%=reportCode%>
             </textarea>
-            <input class="button" type="button" onclick="saveReport('<%=request.getParameter("reportName")%>')" value="Save"/>
+            <input class="button" type="button" onclick="saveReport('<%=request.getParameter("reportName")%>')" value="保存"/>
 
-            <input type="button" onclick="document.location.href='list-reports.jsp?region=region5&item=reporting_list'" value="Cancel"
+            <input type="button" onclick="document.location.href='list-reports.jsp?region=region5&item=reporting_list'" value="取消"
                    class="button">
         </form>
     </div>

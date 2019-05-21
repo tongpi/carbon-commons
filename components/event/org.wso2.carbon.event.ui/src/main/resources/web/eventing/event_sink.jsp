@@ -161,17 +161,17 @@
                             <tbody>
                             <tr>
                                 <td class="leftCol-med">主题<span class="required">*</span></td>
-                                <td colspan="3"><input type="text" name="topic" class="initE" title="Topic you need to subscribe to eg. foo/bar"/></td>
+                                <td colspan="3"><input type="text" name="topic" class="initE" title="你需要订阅的主题。例如： foo/bar"/></td>
                             </tr>
                             <tr >
                                 <td class="leftCol-med">事件目的地 URL<span class="required">*</span></td>
-                                <td colspan="3"><input type="text" style="width:500px" name="eventSinkURL" class="initE" title="Enpoint reference to where matching messages are sent eg. http://yourhost:7777/services/MessageCollector"/></td>
+                                <td colspan="3"><input type="text" style="width:500px" name="eventSinkURL" class="initE" title="指向发送匹配消息的位置。例如： http://yourhost:7777/services/MessageCollector"/></td>
                             </tr>
                             <tr>
                                 <td>到期时间</td>
                                 <td style="width:170px;">
                                     日期:<br />
-                                    <input type="text" id="expirationTime" name="expirationTime" class="initE" onclick="clearTextIn(this)" onblur="fillTextIn(this)" value="" title="Active Time Period for this Subscription, if -1 never expires"/>
+                                    <input type="text" id="expirationTime" name="expirationTime" class="initE" onclick="clearTextIn(this)" onblur="fillTextIn(this)" value="" title="此订阅的活动时间段, 如果是 -1 则永不过期"/>
                                  	<a style="cursor:pointer" onclick="showCalendar()"><img src="../admin/images/calendar.gif" border="0" align="top" /> </a>
                                     <div class="yui-skin-sam"><div id="cal1Container" style="display:none;"></div></div>
                                 </td>

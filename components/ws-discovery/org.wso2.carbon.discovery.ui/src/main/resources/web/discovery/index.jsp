@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+ <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
@@ -156,19 +157,19 @@
                                     if (pd.getOnline()) {
                                 %>
                                 <a href="#" onclick="viewServices('<%=key%>')" class="icon-link"
-                                    style="background-image:url(../admin/images/view.gif);">View</a>
+                                    style="background-image:url(../admin/images/view.gif);">查看</a>
                                 <%
                                     } else {
                                 %>
                                 <a class="icon-link icon-disabled"
-                                    style="background-image:url(../admin/images/view-disabled.gif);cursor:default ">View</a>
+                                    style="background-image:url(../admin/images/view-disabled.gif);cursor:default ">查看</a>
                                 <%
                                     }
                                 %>
                                 <a href="#" onclick="editProxy('<%=key%>')" class="icon-link"
-                                    style="background-image:url(../admin/images/edit.gif);">Edit</a>
+                                    style="background-image:url(../admin/images/edit.gif);">编辑</a>
                                 <a href="#" onclick="deleteProxy('<%=key%>')" class="icon-link"
-                                    style="background-image:url(../admin/images/delete.gif);">Delete</a>
+                                    style="background-image:url(../admin/images/delete.gif);">删除</a>
                             </div>    
                         </td>
                     </tr>

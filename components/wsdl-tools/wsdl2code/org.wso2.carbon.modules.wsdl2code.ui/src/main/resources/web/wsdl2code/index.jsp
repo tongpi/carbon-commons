@@ -15,6 +15,7 @@
  specific language governing permissions and limitations
  under the License.
  --%>
+ <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.apache.axiom.om.OMElement" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
 <%@ page import="org.owasp.encoder.Encode" %>
@@ -386,8 +387,8 @@ function codeGenFileUploadeHelper(codegenParentTextId, executor) {
                         <!--- Maven Configurations starts here -->
 
                         <tr>
-                            <td>groupId</td>
-                            <td>Group Id for maven configuration</td>
+                            <td>组Id</td>
+                            <td>maven配置的Group Id</td>
                             <td><input type="text" class="toolsClass" value="WSO2" name="gid" id="id_gid"></td>
                         </tr>
 
@@ -398,8 +399,8 @@ function codeGenFileUploadeHelper(codegenParentTextId, executor) {
                         %>
 
                         <tr>
-                            <td>artifactId</td>
-                            <td>Artifact Id for maven configuration</td>
+                            <td>构件Id</td>
+                            <td>maven配置的构件Id</td>
                             <td><input type="text" class="toolsClass" value="WSO2-Axis2-Client" name="aid" id="id_aid"></td>
                         </tr>
 
@@ -410,8 +411,8 @@ function codeGenFileUploadeHelper(codegenParentTextId, executor) {
                         %>
 
                         <tr>
-                            <td>version</td>
-                            <td>Version for maven configuration</td>
+                            <td>版本号</td>
+                            <td>maven配置的版本号</td>
                             <td><input type="text" class="toolsClass" value="0.0.1-SNAPSHOT" name="vn" id="id_vn"></td>
                         </tr>
 

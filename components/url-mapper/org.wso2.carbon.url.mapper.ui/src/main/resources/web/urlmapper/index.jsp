@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+ <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar"
 	prefix="carbon"%>
@@ -104,7 +105,7 @@
 		<script type="text/javascript">
 		  
    function add(myepr){
-        CARBON.showInputDialog("Enter URL Mapping name :\n",function(inputVal){
+        CARBON.showInputDialog("输入URL映射名称 :\n",function(inputVal){
             var reason = checkMappingAvailability(inputVal);
             if(reason == "") {
                 jQuery.ajax({
@@ -125,7 +126,7 @@
 
  <script type="text/javascript">
    function edit(myepr,host){
-        CARBON.showInputDialog("The Mapping you are editing is: " + host + "\n",function(inputVal){
+        CARBON.showInputDialog("你正在编辑的映射是: " + host + "\n",function(inputVal){
         var reason = checkMappingAvailability(inputVal);
         if(reason == "") {
             jQuery.ajax({
@@ -262,13 +263,13 @@
                                     <a class="icon-link"
                                     style="background-image: url(images/edit.gif);"
                                     onclick="edit('<%=carbonEndpoint%>','<%=host%>');"
-                                    title="Edit"><fmt:message key="edit" /></a>
+                                    title="编辑"><fmt:message key="edit" /></a>
                                 </td>
                                 <td>
                                     <a class="icon-link"
                                     style="background-image: url(images/delete.gif);"
                                     onclick="deleteHost('<%=carbonEndpoint%>','<%=host%>');"
-                                    title="Delete"><fmt:message key="delete" /></a>
+                                    title="删除"><fmt:message key="delete" /></a>
                                 </td>
                                 <%
                                 }
@@ -285,8 +286,8 @@
             <tr>
                 <td td colspan="2">
                     <a class="icon-link"
-                    style="background-image:url(images/add.gif);" onclick="add('<%=carbonEndpoint%>');" title="Add Service Specific Url">
-                    Add New Mapping
+                    style="background-image:url(images/add.gif);" onclick="add('<%=carbonEndpoint%>');" title="添加特定于服务的URL">
+                    添加新的映射
                     </a>
                 </td>
             </tr>

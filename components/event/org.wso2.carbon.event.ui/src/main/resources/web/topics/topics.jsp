@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="org.apache.axis2.client.Options" %>
@@ -47,7 +48,7 @@
     <script type="text/javascript" src="../admin/js/main.js"></script>
 
     <carbon:breadcrumb
-            label="add"
+            label="添加"
             resourceBundle="org.wso2.carbon.event.ui.i18n.Resources"
             topPage="false"
             request="<%=request%>"/>

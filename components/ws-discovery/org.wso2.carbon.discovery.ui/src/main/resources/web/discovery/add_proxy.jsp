@@ -15,6 +15,7 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.discovery.stub.types.mgt.DiscoveryProxyDetails" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.apache.axis2.context.ConfigurationContext" %>
@@ -173,7 +174,7 @@
                             configContext, backendServerURL, cookie, request.getLocale());
                     DiscoveryProxyDetails pd = client.getDiscoveryProxy(proxyName);
                     if (pd == null) {
-                        throw new Exception("The discovery proxy named " + proxyName + " does not exist");                        
+                        throw new Exception("要发现的代理 " + proxyName + " 不存在");                        
                     }
                     proxyURL = pd.getUrl();
                     if (pd.getPolicy() != null) {

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     boolean isTemplate = true;
     try {
@@ -30,7 +31,7 @@
     <%
         ReportResourceSupplierClient resourcesSupplier = ReportResourceSupplierClient.getInstance(config, session);
         String[] reports = new String[0];
-        String error2 = "Failed to get report list";
+        String error2 = "获取报表清单失败";
 
         String serverURL = CarbonUIUtil.getServerURL(config.getServletContext(), session);
         ConfigurationContext configContext =
@@ -104,8 +105,8 @@
                         </td>
                         <td style="vertical-align:top !important;"><a class="edit-icon-link"
                                                                       href="template-editer.jsp?reportName=<%=reports[i]%>">Edit</a>
-                            <a onclick="deleteRow('<%=reports[i]%>','Do you want to delete')"
-                               class="delete-icon-link" href="#" style="margin-left:50px">Delete</a>
+                            <a onclick="deleteRow('<%=reports[i]%>','你确定要删除？')"
+                               class="delete-icon-link" href="#" style="margin-left:50px">删除</a>
                         </td>
                     </tr>
                     <%

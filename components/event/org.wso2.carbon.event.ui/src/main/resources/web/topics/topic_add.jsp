@@ -194,7 +194,7 @@
         <table id="topicAddTable" class="styledLeft" style="width:100%">
             <thead>
             <tr>
-                <th colspan="2">Enter Topic Name</th>
+                <th colspan="2"><fmt:message key="enter.topic.name"/></th>
             </tr>
             </thead>
             <tbody>

@@ -15,7 +15,7 @@
 ~ specific language governing permissions and limitations
 ~ under the License.
 -->
-
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 <fmt:bundle basename="org.wso2.carbon.reporting.custom.ui.i18n.Resources">
@@ -26,7 +26,7 @@
 
 
 <div id="middle">
-<h2>Select Report Type</h2>
+<h2>选择图表类型</h2>
 
 <div id="workArea">
 
@@ -55,13 +55,12 @@
                         key="table.type.report"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/table.png" title="Click to enlarge">
+                    <a href="images/table.png" title="点击放大">
                         <img src="images/table.png" height="180" width="180" align="middle"/>
                     </a>
                 </td>
-                <td valign="middle"> Table report can be generated from preferred datasource. You can specify the datasource,column names
-                    of your table,
-                    formatting of your table design, etc with few steps and get your data in table report.</td>
+                <td valign="middle"> 可以从首选数据源生成表报告。可以指定数据源、表的列名,
+                    只需几个步骤即可格式化表设计等，并在表报告中获取数据.</td>
             </tr>
 
             <tr>
@@ -70,13 +69,11 @@
                         key="bar.chart.type"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/barchart.png" title="Click to enlarge">
+                    <a href="images/barchart.png" title="点击放大">
                         <img src="images/barchart.png" height="180" width="180" align="middle">
                     </a>
                 </td>
-                <td valign="middle">  Barchart report which contains one or many series can be created. You can customize the number of
-                    series, the data you want to plot, etc
-                    with few steps and get your bar chart report.</td>
+                <td valign="middle">  可以创建包含一个或多个序列的条形图报告。您可以通过几个步骤自定义序列数、要绘制的数据等，并获得条形图报告.</td>
             </tr>
 
             <tr>
@@ -85,14 +82,11 @@
                         key="xy.bar.chart.report"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/xy_barchart.png" title="Click to enlarge">
+                    <a href="images/xy_barchart.png" title="点击放大">
                         <img src="images/xy_barchart.png" height="180" width="180" align="middle">
                     </a>
                 </td>
-                <td valign="middle"> XY barchart report which contains one or many series can be created. You can customize the number of
-                    series, the data you want to plot, etc
-                    with few steps and get your XY bar chart report. The chart plot requires both x and y axis to be in
-                    numeric fields.</td>
+                <td valign="middle"> 可以创建包含一个或多个序列的xy条形图报告。您可以通过几个步骤自定义序列数、要绘制的数据等，并获得xy条形图报告。图表绘图要求X和Y轴都在数字字段中.</td>
             </tr>
 
             <tr>
@@ -102,13 +96,11 @@
                             key="stacked.bar.chart.type"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/stacked_bar_chart.png" title="Click to enlarge">
+                    <a href="images/stacked_bar_chart.png" title="点击放大">
                         <img src="images/stacked_bar_chart.png" height="180" width="180" align="middle">
                     </a>
                 </td>
-                <td valign="middle">Stacked barchart report which contains one or many series can be created. As name explains, the
-                    series will be stacked top of series.
-                    You design your report by selecting the series, and defining your own formatting in few steps.</td>
+                <td valign="middle">可以创建包含一个或多个序列的堆积条形图报表。顾名思义，该系列将堆叠在系列顶部。您可以通过选择系列并通过几个步骤定义自己的格式来设计报表.</td>
             </tr>
 
 
@@ -118,14 +110,12 @@
                         key="line.chart.type"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/line_chart.png" title="Click to enlarge">
+                    <a href="images/line_chart.png" title="点击放大">
                         <img src="images/line_chart.png" height="180" width="180" align="middle">
                     </a>
 
                 </td>
-                   <td valign="middle">Line chart report which contains one or many series can be created. You can customize the number of
-                    series, the data you want to plot, etc
-                    with few steps and get your line chart report.</td>
+                   <td valign="middle">可以创建包含一个或多个系列的折线图报表。您可以通过几个步骤自定义序列数、要绘制的数据等，并获得折线图报告.</td>
             </tr>
 
             <tr>
@@ -134,15 +124,12 @@
                         key="xy.line.chart.report"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/xy_line_chart.png" title="Click to enlarge">
+                    <a href="images/xy_line_chart.png" title="点击放大">
                         <img src="images/xy_line_chart.png" height="180" width="180" align="middle">
                     </a>
                 </td>
                 <td valign="middle">
-                    XY line chart report which contains one or many series can be created. You can customize the number
-                    of series, the data you want to plot, etc
-                    with few steps and get your XY line chart report. The chart plot requires both x and y axis to be in
-                    numeric fields.
+                    可以创建包含一个或多个系列的xy折线图报告。您可以通过几个步骤自定义序列数、要绘制的数据等，并获得xy折线图报告。图表绘图要求X和Y轴都在数字字段中.
                 </td>
             </tr>
 
@@ -152,14 +139,12 @@
                         key="area.chart.type"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/areachart.png" title="Click to enlarge">
+                    <a href="images/areachart.png" title="点击放大">
                         <img src="images/areachart.png" height="180" width="180" align="middle">
                     </a>
                 </td>
                 <td valign="middle">
-                     Area chart report which contains one or many series can be created. You can customize the number of
-                    series, the data you want to plot, etc
-                    with few steps and get your area chart report.
+                    可以创建包含一个或多个系列的面积图报告。您可以通过几个步骤自定义序列数、要绘制的数据等，并获得面积图报告.
                 </td>
             </tr>
 
@@ -170,15 +155,12 @@
                         key="xy.area.chart.report"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/xy_area_chart.png" title="Click to enlarge">
+                    <a href="images/xy_area_chart.png" title="点击放大">
                         <img src="images/xy_area_chart.png" height="180" width="180" align="middle">
                     </a>
                 </td>
                 <td valign="middle">
-                    XY Area chart report which contains one or many series can be created. You can customize the number
-                    of series, the data you want to plot, etc
-                    with few steps and get your XY Area chart report. The chart plot requires both x and y axis to be in
-                    numeric fields.
+                    可以创建包含一个或多个系列的xy面积图报告。您可以通过几个步骤自定义序列数、要绘制的数据等，并获得xy面积图报告。图表绘图要求X和Y轴都在数字字段中.
                 </td>
             </tr>
 
@@ -190,14 +172,12 @@
                 </td>
                 <td valign="middle">
 
-                    <a href="images/stacked_area_chart.png" title="Click to enlarge">
+                    <a href="images/stacked_area_chart.png" title="点击放大">
                         <img src="images/stacked_area_chart.png" height="180" width="180" align="middle">
                     </a>
                  </td>
                 <td valign="middle">
-                     Stacked area chart report which contains one or many series can be created. As name explains, the
-                    series will be stacked top of series.
-                    You design your report by selecting the series, and defining your own formatting in few steps.
+                     可以创建包含一个或多个系列的堆积面积图报表。顾名思义，该系列将堆叠在系列顶部。您可以通过选择系列并通过几个步骤定义自己的格式来设计报表.
                 </td>
             </tr>
 
@@ -208,13 +188,12 @@
                         key="pie.chart.type"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/pie-chart.png" title="Click to enlarge">
+                    <a href="images/pie-chart.png" title="点击放大">
                         <img src="images/pie-chart.png" height="180" width="180" align="middle">
                     </a>
                 </td>
                 <td valign="middle">
-                      Pie chart report which can be generated from your data. You can design your report by
-                    providing more formatting details for your report in few steps.
+                      可以从数据中生成的饼图报表。您可以通过几个步骤为报表提供更多格式详细信息来设计报表.
                 </td>
             </tr>
 
@@ -224,13 +203,12 @@
                 </td>
                 <td valign="middle">
 
-                    <a href="images/composite.png" title="Click to enlarge">
+                    <a href="images/composite.png" title="点击放大">
                         <img src="images/composite.png" height="180" width="180" align="middle">
                     </a>
                 </td>
                 <td valign="middle">
-                    You can obtain form a master report of composing your selected reports you have defined and
-                    produce a combination of report formats mentioned.
+                    您可以从主报表中获取您所定义的所选报表的组成，并生成所述报表格式的组合.
                 </td>
             </tr>
 
@@ -242,12 +220,12 @@
                         key="custom.report"/></a></label>
                 </td>
                 <td valign="middle">
-                    <a href="images/custom.jpeg" title="Click to enlarge">
+                    <a href="images/custom.jpeg" title="点击放大">
                         <img src="images/custom.jpeg" height="180" width="180" border="1px" align="middle">
                     </a>
                 </td>
                 <td valign="middle">
-                     You can define your own .jrxml file and upload the that inorder to generate your report.
+                     您可以定义自己的.jrxml文件并上载该文件以生成报告.
                 </td>
             </tr>
 

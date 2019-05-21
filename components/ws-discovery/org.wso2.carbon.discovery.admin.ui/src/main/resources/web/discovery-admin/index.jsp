@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIMessage" %>
 <%@ page import="org.wso2.carbon.discovery.admin.ui.DiscoveryAdminClient" %>
 <%@ page import="org.wso2.carbon.utils.ServerConstants" %>
@@ -74,9 +75,9 @@
                 var result = data.replace(/^\s+|\s+$/g, '');
                 var div = document.getElementById('proxyStatus');
                 if (result == 'success') {
-                    div.innerHTML = '<font color="green">Online</font>';
+                    div.innerHTML = '<font color="green">在线</font>';
                 } else {
-                    div.innerHTML = '<font color="red">Offline</font>';
+                    div.innerHTML = '<font color="red">离线</font>';
                 }
             });
     }
