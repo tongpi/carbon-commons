@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
  ~ Copyright (c) 2005-2010, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
@@ -40,7 +41,7 @@
     </httpGetRequestProcessors>
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>tryit</DisplayName>
+            <DisplayName>测试</DisplayName>
             <ResourceId>/permission/admin/manage/tryit</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

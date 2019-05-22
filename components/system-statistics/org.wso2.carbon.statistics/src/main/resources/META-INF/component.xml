@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
  ~ Copyright (c) 2005-2010, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
@@ -19,7 +20,7 @@
     
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Monitor</DisplayName>
+            <DisplayName>监控</DisplayName>
             <ResourceId>/permission/admin/monitor</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

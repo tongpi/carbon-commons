@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
  ~ Copyright (c) 2005-2010, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
@@ -19,7 +20,7 @@
 
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Cluster-mgt</DisplayName>
+            <DisplayName>集群管理</DisplayName>
             <ResourceId>/permission/admin/manage/cluster</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
 ~
@@ -19,27 +20,27 @@
 <component xmlns="http://products.wso2.org/carbon">
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Manage</DisplayName>
+            <DisplayName>管理</DisplayName>
             <ResourceId>/permission/admin/manage</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>Topic</DisplayName>
+            <DisplayName>主题</DisplayName>
             <ResourceId>/permission/admin/manage/topic</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>Add Topic/SubTopic</DisplayName>
+            <DisplayName>添加主题/子主题</DisplayName>
             <ResourceId>/permission/admin/manage/topic/addTopic</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>Browse Topic</DisplayName>
+            <DisplayName>浏览主题</DisplayName>
             <ResourceId>/permission/admin/manage/topic/browseTopic</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>Delete Topic</DisplayName>
+            <DisplayName>删除主题</DisplayName>
             <ResourceId>/permission/admin/manage/topic/deleteTopic</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>Purge Topic</DisplayName>
+            <DisplayName>清空主题</DisplayName>
             <ResourceId>/permission/admin/manage/topic/purgeTopic</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

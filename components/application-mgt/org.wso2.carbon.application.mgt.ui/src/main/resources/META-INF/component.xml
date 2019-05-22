@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
  ~ Copyright (c) 2005-2010, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
@@ -19,15 +20,15 @@
 
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Carbon Applications</DisplayName>
+            <DisplayName>Carbon 应用</DisplayName>
             <ResourceId>/permission/admin/manage/capps</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>list</DisplayName>
+            <DisplayName>列表</DisplayName>
             <ResourceId>/permission/admin/manage/capps/list</ResourceId>
         </ManagementPermission>
         <ManagementPermission>
-            <DisplayName>add</DisplayName>
+            <DisplayName>添加</DisplayName>
             <ResourceId>/permission/admin/manage/capps/add</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>

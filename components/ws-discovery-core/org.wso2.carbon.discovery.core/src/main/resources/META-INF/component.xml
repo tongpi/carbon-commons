@@ -19,7 +19,7 @@
 
     <ManagementPermissions>
         <ManagementPermission>
-            <DisplayName>Discovery</DisplayName>
+            <DisplayName>发现</DisplayName>
             <ResourceId>/permission/admin/configure/discovery</ResourceId>
         </ManagementPermission>
     </ManagementPermissions>
