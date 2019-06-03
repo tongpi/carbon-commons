@@ -41,7 +41,7 @@ function addRowForSP(prop1, prop2, table, delFunction) {
     param2Cell.appendChild(inputElem);
 
     var delCell = document.createElement('td');
-    delCell.innerHTML='<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="Delete" class="icon-link" style="background-image:url(../admin/images/delete.gif);">Delete</a>';
+    delCell.innerHTML='<a id="deleteLink" href="#" onClick="' + delFunction + '(this.parentNode.parentNode.rowIndex)" alt="删除" class="icon-link" style="background-image:url(../admin/images/delete.gif);">删除</a>';
 
     var rowtoAdd = document.createElement('tr');
     rowtoAdd.appendChild(param1Cell);
@@ -90,7 +90,7 @@ function isDSValid(namemsg, invalidnamemsg, drivermsg, urlmsg, customdsmsg) {
         CARBON.showWarningDialog(invalidnamemsg);
         return false;
     }
-    
+
     var dsType = document.getElementById('dsType').value;
     var customDsType = document.getElementById('customDsType').value;
     if (dsType != 'RDBMS' && (customDsType == null || customDsType == '')) {
@@ -114,7 +114,7 @@ function clearStatus(id) {
     var textValue = textbox.value;
     if (textValue.indexOf('int') >= 0 || textValue.indexOf('long') >= 0){
       textbox.value = '';
-    } 
+    }
     return true;
 }
 
@@ -156,7 +156,7 @@ function testConnection(namemsg, invalidnamemsg, drivermsg, urlmsg, validqueryms
 function doTestConnection(successmsg) {
 	if (document.getElementById("jndiPropertyTable") != null) {
     	extractJndiProps();
-    } 
+    }
     if (document.getElementById("dsPropertyTable") != null) {
     	extractDataSourceProps();
     }
@@ -179,7 +179,7 @@ function doTestConnection(successmsg) {
     jQuery.post(requestUrl, ({}),
             function(data, status) {
                 if (status != "success") {
-                    CARBON.showWarningDialog("Error Occurred!");
+                    CARBON.showWarningDialog("发生错误!");
                 } else {
                     var returnValue = trim(data);
                     if (returnValue != null && returnValue != undefined && returnValue != "" && returnValue != "true") {
@@ -200,59 +200,59 @@ function trim(stringValue) {
 function ValidateProperties() {
 	if (document.getElementById("dsType").value == 'RDBMS') {
 		if (document.getElementById("maxActive").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for maxActive");
+			CARBON.showErrorDialog("请为最大活动输入一个正值");
 			return false;
 		}
 		if (document.getElementById("maxIdle").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for maxIdle");
+			CARBON.showErrorDialog("请为最大空闲输入一个正值");
 			return false;
 		}
 		if (document.getElementById("minIdle").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for minIdle");
+			CARBON.showErrorDialog("请为最小空闲输入一个正值");
 			return false;
 		}
 		if (document.getElementById("initialSize").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for initialSize");
+			CARBON.showErrorDialog("请为初始大小输入一个正值");
 			return false;
 		}
 		if (document.getElementById("maxWait").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for maxWait");
+			CARBON.showErrorDialog("请为最大等待输入一个正值");
 			return false;
 		}
 		if (document.getElementById("timeBetweenEvictionRunsMillis").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for timeBetweenEvictionRunsMillis");
+			CARBON.showErrorDialog("请为回收之间的运行时间输入一个正值");
 			return false;
 		}
 		if (document.getElementById("numTestsPerEvictionRun").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for numTestsPerEvictionRun");
+			CARBON.showErrorDialog("请为每次回收运行的测试次数输入一个正值");
 			return false;
 		}
 		if (document.getElementById("minEvictableIdleTimeMillis").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for minEvictableIdleTimeMillis");
+			CARBON.showErrorDialog("请为最小可回收空闲时间输入一个正值");
 			return false;
 		}
 		if (document.getElementById("removeAbandonedTimeout").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for removeAbandonedTimeout");
+			CARBON.showErrorDialog("请为删除被遗弃的超时输入一个正值");
 			return false;
 		}
 		if (document.getElementById("validationInterval").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for validationInterval");
+			CARBON.showErrorDialog("请为校验时间间隔输入一个正值");
 			return false;
 		}
 		if (document.getElementById("abandonWhenPercentageFull").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for abandonWhenPercentageFull");
+			CARBON.showErrorDialog("请为当百分比满时全部遗弃输入一个正值");
 			return false;
 		}
 		if (document.getElementById("maxAge").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for maxAge");
+			CARBON.showErrorDialog("请为最大年龄输入一个正值");
 			return false;
 		}
 		if (document.getElementById("suspectTimeout").value < 0) {
-			CARBON.showErrorDialog("Please enter a positive value for suspectTimeout");
+			CARBON.showErrorDialog("请为可疑超时输入一个正值");
 			return false;
 		}
 		if (document.getElementById("validationQueryTimeout").value < 0) {
-        	CARBON.showErrorDialog("Please enter a positive value for Validation Query Timeout");
+        	CARBON.showErrorDialog("请为验证查询超时输入一个正值");
         	return false;
         }
 	}
@@ -306,7 +306,7 @@ function disableForm(){
 			document.getElementById("useEquals").readOnly = true;
 			document.getElementById("suspectTimeout").readOnly = true;
 			document.getElementById("validationQueryTimeout").readOnly = true;
-			
+
 			document.getElementById("datasourceProvider").disabled = true;
 			document.getElementById("defaultTransactionIsolation").disabled = true;
 			document.getElementById("testOnBorrow").disabled = true;
@@ -320,6 +320,5 @@ function disableForm(){
 			document.getElementById("useEquals").disabled = true;
 			document.getElementById("alternateUsernameAllowed").disabled = true;
 	}
-	} 
+	}
 }
-

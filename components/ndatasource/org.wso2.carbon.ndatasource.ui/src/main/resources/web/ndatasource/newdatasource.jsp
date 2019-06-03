@@ -17,7 +17,7 @@
  -->
 <%@page import="org.wso2.carbon.ndatasource.ui.NDataSourceClientConstants"%>
 <%@page import="org.wso2.carbon.ndatasource.ui.config.DSXMLConfiguration"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 
@@ -46,11 +46,11 @@
 <script type="text/javascript" src="../ajax/js/prototype.js"></script>
 <fmt:bundle basename="org.wso2.carbon.ndatasource.ui.i18n.Resources">
 <%
-	String dsProvider = "default"; 	
+	String dsProvider = "default";
 	WSDataSourceInfo dataSourceInfo = null;
 	WSDataSourceMetaInfo dataSourceMetaInfo = null;
 	WSDataSourceMetaInfo_WSDataSourceDefinition dataSourceDefinition = null;
-		
+
 	String dataSourceName = request.getParameter("dsName");
 	String description = request.getParameter("description");
 	boolean editMode = (("true".equals(request.getParameter("edit"))) ? true : false );
@@ -101,7 +101,7 @@
 	Integer validationQueryTimeout = null;
 	Boolean alternateUsernameAllowed = false;
     String rdbmsEngineType = "#";
-	
+
 	if (dataSourceName != null && !dataSourceName.equals("")) {
 		NDataSourceAdminServiceClient client = NDataSourceAdminServiceClient.getInstance(config, session);
 		dataSourceInfo = client.getDataSource(dataSourceName);
@@ -116,9 +116,9 @@
 		type = (type == null) ? "" : type;
 		isSystem = dataSourceMetaInfo.getSystem();
 		description = dataSourceMetaInfo.getDescription();
-				
+
 		String configuration = dataSourceDefinition.getDsXMLConfiguration();
-				
+
 		if (type.equals("RDBMS")) {
 			RDBMSDSXMLConfiguration rdbmsCon = (RDBMSDSXMLConfiguration)NDataSourceHelper.unMarshal(type, configuration);
 			dataSourceclassName = rdbmsCon.getDataSourceClassName();
@@ -167,17 +167,17 @@
 			initSQL = rdbmsCon.getInitSQL();
 			jdbcInterceptors = rdbmsCon.getJdbcInterceptors();
 			validationInterval = rdbmsCon.getValidationInterval();
-			fairQueue = rdbmsCon.getFairQueue(); 
+			fairQueue = rdbmsCon.getFairQueue();
 			jmxEnabled = rdbmsCon.getJmxEnabled();
 			abandonWhenPercentageFull = rdbmsCon.getAbandonWhenPercentageFull();
 			maxAge = rdbmsCon.getMaxAge();
 			useEquals = rdbmsCon.getUseEquals();
 			suspectTimeout = rdbmsCon.getSuspectTimeout();
 			validationQueryTimeout = rdbmsCon.getValidationQueryTimeout();
-			alternateUsernameAllowed = rdbmsCon.getAlternateUsernameAllowed(); 
+			alternateUsernameAllowed = rdbmsCon.getAlternateUsernameAllowed();
 		}
-	
-		//load JNDI configuration 
+
+		//load JNDI configuration
 		JNDIConfig jndiConfig = dataSourceMetaInfo.getJndiConfig();
 		if (jndiConfig != null) {
 			jndiConfigName = jndiConfig.getName();
@@ -190,17 +190,17 @@
 				}
 				for (int i = 1; i < envEntries.length; i++) {
 					givenJNDIProps = givenJNDIProps + "::" + envEntries[i].getName() + "," + envEntries[i].getValue();
-				} 
-			}  
+				}
+			}
 		}
 	}
-	
+
 	//Data Source Provider is changed
 	if (request.getParameter("dsProvider") != null) {
 		dsProvider = request.getParameter("dsProvider");
 	}
 	dsProvider = (dsProvider == null) ? "default" : dsProvider;
-	
+
 	description = (description == null) ? "" : description;
 	dataSourceclassName = (dataSourceclassName == null) ? "" : dataSourceclassName;
 	driverClassName = (driverClassName == null) ? "" : driverClassName;
@@ -271,7 +271,7 @@ function addDataSourceProperties() {
 
 function populateDataSourceProperties() {
 	//edit mode
-	var str = '<%=givenDataSourceProps%>'; 
+	var str = '<%=givenDataSourceProps%>';
 	if (str == 'null' && document.getElementById('dsproviderProperties') != null) {
 		str = document.getElementById('dsproviderProperties').value;
 	}
@@ -288,7 +288,7 @@ function populateDataSourceProperties() {
 
 function populateJNDIProperties() {
 	//edit mode
-	var str = '<%=givenJNDIProps%>'; 
+	var str = '<%=givenJNDIProps%>';
 	if (str == 'null' && document.getElementById('jndiProperties') != null) {
 		str = document.getElementById('jndiProperties').value;
 	}
@@ -334,7 +334,7 @@ function extractDataSourceProps() {
         if (j == 1) {
             str += parmName + ',' + parmValue;
         }else{
-            str += '::' + parmName + ',' + parmValue;                
+            str += '::' + parmName + ',' + parmValue;
         }
     }
     document.dscreationform.dsproviderProperties.value = str;
@@ -353,7 +353,7 @@ function extractJndiProps() {
         if (j == 1) {
             str += parmName + ',' + parmValue;
         }else{
-            str += '::' + parmName + ',' + parmValue;                
+            str += '::' + parmName + ',' + parmValue;
         }
     }
 
@@ -366,7 +366,7 @@ function changeDataSourceProvider (obj, document) {
 	var description = document.getElementById("description").value;
 	var editMode = document.getElementById("editMode").value
 	var query = 'dsProvider='+selectedDSProvider;
-	
+
 	if (dsName != null && dsName != "") {
 		query = query + '&dsName='+dsName;
 	}
@@ -376,25 +376,25 @@ function changeDataSourceProvider (obj, document) {
 	if (editMode != null && editMode == "true") {
 		query = query + '&edit='+editMode;
 	}
-	location.href = 'newdatasource.jsp?'+query;	
+	location.href = 'newdatasource.jsp?'+query;
 }
 
 function dsSave(namemsg, invalidnamemsg, drivermsg, urlmsg, customdsmsg, form) {
-	
+
 	document.getElementById('configContent').value = editAreaLoader.getValue("configuration");
 
     if (!isDSValid(namemsg, invalidnamemsg, drivermsg, urlmsg, customdsmsg)) {
         return false;
     }
-    
+
     if (document.getElementById("jndiPropertyTable") != null) {
     	extractJndiProps();
-    } 
-    
+    }
+
     if (document.getElementById("dsPropertyTable") != null) {
     	extractDataSourceProps();
     }
-      
+
     form.submit();
     return true;
 }
@@ -509,13 +509,13 @@ function displayPasswordField() {
 		 <select id="dsTypeSelector" name="dsTypeSelector"
                         onchange="changeConfigView(this,document)">
                     <% if (!editMode) { %>
-	                    <option value="rdbms" selected="selected">RDBMS</option>
-	                    <option value="Custom">Custom</option>
+	                    <option value="rdbms" selected="selected">关系数据库</option>
+	                    <option value="Custom">自定义</option>
                     <% } else if (type.equals(NDataSourceClientConstants.RDBMS_DTAASOURCE_TYPE)) {%>
-                    	<option value="rdbms" selected="selected">RDBMS</option>
+                    	<option value="rdbms" selected="selected">关系数据库</option>
                     <% } else { %>
-	                    <option value="rdbms">RDBMS</option>
-	                    <option value="Custom" selected="selected">Custom</option>
+	                    <option value="rdbms">关系数据库</option>
+	                    <option value="Custom" selected="selected">自定义</option>
                     <% } %>
          </select>
 		<input type="hidden" id="dsType" name="dsType" value="<%=type %>"/>
@@ -560,16 +560,16 @@ function displayPasswordField() {
         <select id="datasourceProvider" name="datasourceProvider"
                         onchange="changeDataSourceProvider(this,document)">
                     <% if (dsProvider.equals("default")) { %>
-                    <option value="default" selected="selected">default</option>
+                    <option value="default" selected="selected">缺省</option>
                     <% } else { %>
-                    <option value="default">default</option>
+                    <option value="default">缺省</option>
                     <% } %>
                     <% if(dsProvider.equals(NDataSourceClientConstants.RDBMS_EXTERNAL_DATASOURCE_PROVIDER)) { %>
                    	<option value="<%=NDataSourceClientConstants.RDBMS_EXTERNAL_DATASOURCE_PROVIDER%>"
-                            selected="selected"><%=NDataSourceClientConstants.RDBMS_EXTERNAL_DATASOURCE_PROVIDER%></option>
+                            selected="selected">外部数据源</option>
                    	<% } else { %>
                    	<option value="<%=NDataSourceClientConstants.RDBMS_EXTERNAL_DATASOURCE_PROVIDER%>">
-                        <%=NDataSourceClientConstants.RDBMS_EXTERNAL_DATASOURCE_PROVIDER%></option>
+                        外部数据源</option>
                    	<% } %>
          </select>
          <input type="hidden" id="dsProviderType" name="dsProviderType" value="<%=dsProvider %>" />
@@ -586,9 +586,9 @@ function displayPasswordField() {
                 onchange="javascript:setJDBCValues(this,document);return false;">
 
             <%if (("#".equals(rdbmsEngineType)|| rdbmsEngineType.equals(""))) {%>
-            <option value="#" selected="selected">--SELECT--</option>
+            <option value="#" selected="selected">--请选择--</option>
             <%} else {%>
-            <option value="#">--SELECT--</option>
+            <option value="#">--请选择--</option>
             <%}%>
 
             <%if ("mysql".equals(rdbmsEngineType)) {%>
@@ -691,9 +691,9 @@ function displayPasswordField() {
             <%}%>
 
             <%if ("Generic".equals(rdbmsEngineType)) {%>
-            <option selected="selected" value="Generic#Generic">Generic</option>
+            <option selected="selected" value="Generic#Generic">通用引擎</option>
             <%} else {%>
-            <option value="Generic#Generic">Generic</option>
+            <option value="Generic#Generic">通用引擎</option>
             <%}%>
         </select>
     </td>
@@ -729,13 +729,13 @@ function displayPasswordField() {
 		<td><input type="checkbox" id="changePassword" name="changePassword" onclick="displayPasswordField()"/>
 		</td>
 	</tr>
-<%}%> 
-	
+<%}%>
+
 <tr id="newPasswordRow" style="display:none">
 	<td><label for="changePassword"><fmt:message  key="password"/></label></td>
 	<td><input type="password" id="newPassword" name="newPassword" class="longInput" autocomplete="off"/></td>
 </tr>
-	
+
 
 <% } else if (NDataSourceClientConstants.RDBMS_EXTERNAL_DATASOURCE_PROVIDER.equals(dsProvider)){ %>
 <tr>
@@ -772,7 +772,7 @@ function displayPasswordField() {
 	         		<tbody>
 	         		</tbody>
 	          </table>
-	          
+
 	     </div>
 	</td>
 </tr>
@@ -835,10 +835,10 @@ function displayPasswordField() {
 	         		<tbody></tbody>
 	          </table>
 	    </div>
-	    
+
 	  </td>
 </tr>
-        	
+
         </table>
     </td>
 </tr>
@@ -886,29 +886,29 @@ function displayPasswordField() {
 			    <td align="left">
 			        <select id="defaultTransactionIsolation" name="defaultTransactionIsolation">
 			        	<%if ("NONE".equals(defaultTransactionIsolation)) { %>
-			            	<option value="NONE" selected="true">NONE</option>
+			            	<option value="NONE" selected="true">无</option>
 			            <%} else { %>
-			            	<option value="NONE">NONE</option>
+			            	<option value="NONE">无</option>
 			            <%} %>
 			            <%if ("READ_COMMITTED".equals(defaultTransactionIsolation)) { %>
-			            	<option value="READ_COMMITTED" selected="true">READ_COMMITTED</option>
+			            	<option value="READ_COMMITTED" selected="true">读写</option>
 			            <%} else { %>
-			            	<option value="READ_COMMITTED">READ_COMMITTED</option>
+			            	<option value="READ_COMMITTED">读写</option>
 			            <%} %>
 			            <%if ("READ_UNCOMMITTED".equals(defaultTransactionIsolation)) { %>
-			            	<option value="READ_UNCOMMITTED" selected="true">READ_UNCOMMITTED</option>
+			            	<option value="READ_UNCOMMITTED" selected="true">只读</option>
 			            <%} else { %>
-			            	<option value="READ_UNCOMMITTED">READ_UNCOMMITTED</option>
+			            	<option value="READ_UNCOMMITTED">只读</option>
 			            <%} %>
 			            <%if ("REPEATABLE_READ".equals(defaultTransactionIsolation)) { %>
-			            	<option value="REPEATABLE_READ" selected="true">REPEATABLE_READ</option>
+			            	<option value="REPEATABLE_READ" selected="true">可重复读取</option>
 			            <%} else { %>
-			             	<option value="REPEATABLE_READ">REPEATABLE_READ</option>
+			             	<option value="REPEATABLE_READ">可重复读取</option>
 			            <%} %>
 			            <%if ("SERIALIZABLE".equals(defaultTransactionIsolation)) { %>
-			            	<option value="SERIALIZABLE" selected="true">SERIALIZABLE</option>
+			            	<option value="SERIALIZABLE" selected="true">可序列化</option>
 			            <%} else { %>
-			             	<option value="SERIALIZABLE">SERIALIZABLE</option>
+			             	<option value="SERIALIZABLE">可序列化</option>
 			            <%} %>
 			        </select>
 			    </td>
@@ -1122,7 +1122,7 @@ function displayPasswordField() {
 			        </select>
 			    </td>
 			</tr>
-			<tr> 
+			<tr>
 			    <td><fmt:message key="connection.properties"/></td>
 			    <td align="left">
 			    <input id="connectionProperties" name="connectionProperties" type="text" value="<%=Encode.forHtml(connectionProperties) %>"/>
@@ -1262,7 +1262,7 @@ function displayPasswordField() {
 	<tr>
     <td style="width:170px"><fmt:message key="configuration"/></td>
     <td align="left">
-        <textarea id="configuration" name="configuration" 
+        <textarea id="configuration" name="configuration"
         style="background-color:lavender; width:99%;height:470px;*height:500px;
                       font-family:verdana;
                       font-size:11px;
@@ -1276,11 +1276,11 @@ function displayPasswordField() {
 </tr>
 </table>
 <table class="styledLeft noBorders" cellspacing="0" cellpadding="0" border="0">
-<tr>    
+<tr>
    <td class="buttonRow" colspan="3">
    		<%if(type.equals("RDBMS")) { %>
    		<div id="connectionTestMsgDiv" style="display: none;"></div>
-   		<input class="button" id="testConnectionButton" name="testConnectionButton" type="button" value="Test Connection" onclick="var val = isDSValid('<fmt:message key="ds.name.cannotfound.msg"/>','<fmt:message key="ds.name.invalid.msg"/>',
+   		<input class="button" id="testConnectionButton" name="testConnectionButton" type="button" value="测试连接" onclick="var val = isDSValid('<fmt:message key="ds.name.cannotfound.msg"/>','<fmt:message key="ds.name.invalid.msg"/>',
    		'<fmt:message key="ds.driver.cannotfound.msg"/>','<fmt:message key="ds.url.cannotfound.msg"/>'); if (val) {testConnection()};return false;"/>
    		<script type="text/javascript">
             function displayMsg(msg) {
@@ -1298,7 +1298,7 @@ function displayPasswordField() {
             	var password;
             	if (document.getElementById("jndiPropertyTable") != null) {
                 	extractJndiProps();
-                } 
+                }
                 if (document.getElementById("dsPropertyTable") != null) {
                 	extractDataSourceProps();
                 }
@@ -1316,12 +1316,12 @@ function displayPasswordField() {
             		var dsproviderProperties = document.getElementById('dsproviderProperties').value;
             	}
             	dsProvider = escape(dsProvider);
-            	
-            	         	
+
+
                 var url = 'validateconnection-ajaxprocessor.jsp?&dsName=' + document.getElementById('dsName').value+'&driver='+driver+
            	'&url='+encodeURIComponent(url)+'&username='+username+'&dsType=' + datasourceType+'&customDsType='+datasourceCustomType+'&dsProviderType='+dsProvider+
     	'&dsclassname='+dsclassname+'&dsclassname='+dsclassname+'&dsproviderProperties='+dsproviderProperties+'&editMode='+<%=editMode%>;
-    	
+
     		var editMode = document.getElementById("editMode").value;
 			if (editMode == null || editMode == "false") {
 				password = document.getElementById('password').value;
@@ -1345,7 +1345,7 @@ function displayPasswordField() {
         <input class="button" type="button"
                value="<fmt:message key="save"/>"
                onclick="var val = ValidateProperties(); if (val) {dsSave('<fmt:message key="ds.name.cannotfound.msg"/>','<fmt:message key="ds.name.invalid.msg"/>','<fmt:message key="ds.driver.cannotfound.msg"/>','<fmt:message key="ds.url.cannotfound.msg"/>','<fmt:message key="custom.ds.type.name.cannotfound.msg"/>',document.dscreationform)}; return false;"/>
-        
+
         <input class="button" type="reset" value="<fmt:message key="cancel"/>"
                onclick="document.location.href='index.jsp'"/>
         <%} else {%>
