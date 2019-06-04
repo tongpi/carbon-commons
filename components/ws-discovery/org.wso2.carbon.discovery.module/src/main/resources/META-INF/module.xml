@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
  ~ Copyright (c) 2005-2010, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
@@ -17,7 +18,7 @@
  -->
 <module name="Discovery" class="org.wso2.carbon.discovery.module.DiscoveryModule">
     <Description>
-        This module implements WS-Discovery for Carbon.
+        该模块针对Carbon实现了WS-Discovery.
     </Description>
 
     <InFlow>
