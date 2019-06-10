@@ -1,6 +1,6 @@
 <%@ page import="org.wso2.carbon.event.ui.UIConstants" %>
 <%@ page import="org.owasp.encoder.Encode" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -145,7 +145,7 @@
                                     <a style="cursor:pointer" onclick="showCalendar()"><img
                                             src="../admin/images/calendar.gif" border="0"
                                             align="top"/> </a>
-                                    eg:(2012/5/20)
+                                    例如:(2012/5/20)
                                     <div class="yui-skin-sam">
                                         <div id="cal1Container" style="display:none;"></div>
                                     </div>
@@ -163,7 +163,7 @@
                                            value=""/>
                                     <input type="text" id="ssid" alt="ss"
                                            style="width:40px;float:left;margin-right:7px" value=""/>
-                                    如:(15/30/00)
+                                    例如:(15/30/00)
                                 </td>
                                 <td>
 

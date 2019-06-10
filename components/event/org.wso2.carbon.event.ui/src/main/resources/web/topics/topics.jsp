@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="org.apache.axis2.client.Options" %>
@@ -9,6 +8,7 @@
 <%@ page import="org.wso2.carbon.event.stub.internal.xsd.TopicNode" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="java.util.Stack" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script type="text/javascript" src="../ajax/js/prototype.js"></script>
 <script type="text/javascript" src="../resources/js/resource_util.js"></script>
 <!--Yahoo includes for dom event handling-->

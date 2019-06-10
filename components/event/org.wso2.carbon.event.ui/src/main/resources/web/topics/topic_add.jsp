@@ -8,6 +8,7 @@
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.regex.Pattern" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -220,7 +221,7 @@
                 <td class="leftCol-big"><fmt:message key="search.label"/></td>
                 <td>
                     <input type="text" id="search" value="<%=searchTerm%>"/>
-                    <input id="searchButton" class="button" type="button" onclick="searchRole()" value="Search"/>
+                    <input id="searchButton" class="button" type="button" onclick="searchRole()" value="搜索"/>
                 </td>
             </tr>
             <tr>

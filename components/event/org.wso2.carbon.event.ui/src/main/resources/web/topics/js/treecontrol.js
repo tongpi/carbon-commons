@@ -190,7 +190,7 @@ function addTopic() {
     var error = "";
     topic.value = topic.value.replace(/^\s+|\s+$/g, "");
     if (topic.value == "") {
-        error = "Topic name cannot be empty.\n";
+        error = "主题名称不能为空.\n";
     }
 
     if (error != "") {
@@ -200,9 +200,9 @@ function addTopic() {
     addTopicToBackEnd(topic.value)
 
 }
-
-// Adds topic from topic detail/manage page
+page
 function addTopicFromManage() {
+// Adds topic from topic detail/manage
     var existingTopic = document.getElementById("existingTopic");
     var topic = document.getElementById("topic");
     var completeTopic = "";
@@ -214,7 +214,7 @@ function addTopicFromManage() {
     var error = "";
 
     if (topic.value == "") {
-        error = "Topic name cannot be empty.\n";
+        error = "主题名称不能为空";
     }
     if (error != "") {
         CARBON.showErrorDialog(error);
@@ -339,7 +339,7 @@ function updatePermissions() {
                         location.href = "../topics/topic_manage.jsp"
                     });
                 } else {
-                    var message = "Updated permissions successfully";
+                    var message = "已成功更新权限";
                     CARBON.showInfoDialog("" + message, function() {
                         location.href = "../topics/topic_manage.jsp"
                     });
@@ -360,12 +360,12 @@ function updatePermissions() {
 function validateInvoking() {
     var topic = document.getElementById('topic').value;
     if (topic == '') {
-        CARBON.showWarningDialog("Topic is empty");
+        CARBON.showWarningDialog("主题为空");
         return false;
     }
     var message = document.getElementById('xmlMessage').value;
     if (message == '') {
-        CARBON.showWarningDialog("XML Message is empty");
+        CARBON.showWarningDialog("XML消息为空");
         return false;
     }
     /* $.post('try_it_out_invoke_ajaxprocessor.jsp', {topic : topic,xmlMessage:message}, function (data) {
