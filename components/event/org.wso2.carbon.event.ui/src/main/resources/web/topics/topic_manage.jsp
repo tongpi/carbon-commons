@@ -8,6 +8,7 @@
 <%@ page import="org.wso2.carbon.event.ui.UIUtils" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIUtil" %>
 <%@ page import="org.apache.axis2.databinding.utils.ConverterUtil" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="carbon" uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" %>
 <script type="text/javascript" src="js/treecontrol.js"></script>
@@ -205,7 +206,7 @@
     </tr>
     <tr>
         <td>
-            <input type="button" onclick="updatePermissions()" value="Update Permissions">
+            <input type="button" onclick="updatePermissions()" value="更新权限">
         </td>
     </tr>
     </tbody>

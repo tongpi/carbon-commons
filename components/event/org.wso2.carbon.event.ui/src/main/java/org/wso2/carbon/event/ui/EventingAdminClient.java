@@ -46,7 +46,7 @@ public class EventingAdminClient {
 			}
 			return stub.getValidSubscriptions(serviceName);
 		} catch (Exception e) {
-			String msg = "Cannot get valid subscriptions for " + serviceName;
+			String msg = "无法获取的有效订阅: " + serviceName;
 			handleException(msg, e);
 		}
 
@@ -66,7 +66,7 @@ public class EventingAdminClient {
 			}
 			return stub.getExpiredSubscriptions(serviceName);
 		} catch (Exception e) {
-			String msg = "Cannot get expired subscriptions for " + serviceName;
+			String msg = "无法获取的过期订阅:" + serviceName;
 			handleException(msg, e);
 		}
 
@@ -88,7 +88,7 @@ public class EventingAdminClient {
 			}
 			return stub.getSubscriptionDetails(serviceName, subscriptionId);
 		} catch (Exception e) {
-			String msg = "Cannot get subscriptions for details for " + serviceName;
+			String msg = "无法获取的详细信息订阅: " + serviceName;
 			handleException(msg, e);
 		}
 
